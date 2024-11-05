@@ -19,17 +19,22 @@ const NavItem = ({ item = {} }) => {
 
   return (
     <li className={`dropdown${pathname === href ? " current" : ""}`}>
-      <Link href={href}>
-        <a className={expand ? " expanded" : ""}>
-          {name}
-          <button
-            onClick={handleExpand}
-            ariaLabel="dropdown toggler"
-            className={expand ? "expanded" : ""}
-          >
+      <Link
+        href={href}
+        className={expand ? " expanded" : ""}
+        onClick={(e) => {
+          if (subNavItems.length) {
+            e.preventDefault();
+            handleExpand(e);
+          }
+        }}
+      >
+        {name}
+        {subNavItems.length > 0 && (
+          <button onClick={handleExpand} aria-label="dropdown toggler">
             <i className="fa fa-angle-down"></i>
           </button>
-        </a>
+        )}
       </Link>
       <ul
         style={{

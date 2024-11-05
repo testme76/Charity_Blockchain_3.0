@@ -23,7 +23,7 @@ const HeaderThree = () => {
         >
           <div className="main-menu-three__container clearfix">
             <div className="main-menu-three__logo">
-              <Link href="/">
+              <Link href="/" legacyBehavior>
                 <a>
                   <Image src={logo.src} alt="" />
                 </a>
@@ -31,7 +31,7 @@ const HeaderThree = () => {
             </div>
             <div className="main-menu-three__inner-upper clearfix">
               <div className="main-menu-three__btn">
-                <Link href="/causes-details">
+                <Link href="/causes-details" legacyBehavior>
                   <a className="main-menu-three__donate-btn">
                     <i className="fa fa-heart"></i>Donate
                   </a>

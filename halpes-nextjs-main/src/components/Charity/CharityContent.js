@@ -28,17 +28,20 @@ const CharityContent = () => {
     <Col xl={6} lg={6}>
       <div className="welcome-one__right">
         <div className="section-title text-left">
-          <span className="section-title__tagline">Welcome to Charity</span>
+          <span className="section-title__tagline">Welcome to ResCharity</span>
           <h2 className="section-title__title">
-            Helping each other can make world better
-          </h2>
+            Community Cat Kindness Fund</h2>
         </div>
         <p className="welcome-one__right-text">
-          Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do
-          eiusmod tempor incididunt ut labore et simply free text dolore magna
-          aliqua lonm andhn.
+          The Community Cat Kindness Fund has been set up by the Yolo County
+          SPCA to help provide care for community cats including veterinary
+          care and humane euthanasia when needed for medical reasons. Even with
+          discounted services, paying for the veterinary care for community
+          cats is often a hardship on volunteers. This fund will help caring cat
+          lovers to assist community cats in need. All contributors will receive
+          a thank you from the Yolo County SPCA with a tax-deductible receipt.
         </p>
-        <div className="welcome-one__our-mission-and-story">
+        {/* <div className="welcome-one__our-mission-and-story">
           <div className="welcome-one__mission-and-story-single">
             <h3>
               <i className="fas fa-arrow-circle-right"></i>Our Mission
@@ -55,7 +58,7 @@ const CharityContent = () => {
               Lorem ipsum dolor sit amet not is consectetur notted.
             </p>
           </div>
-        </div>
+        </div> */}
         <div className="welcome-one__progress">
           {countBar.map(({ id, title, percent }) => (
             <div className="welcome-one__progress-single" key={id}>

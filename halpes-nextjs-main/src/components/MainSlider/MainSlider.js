@@ -43,13 +43,13 @@ const MainSlider = () => {
         <div className="swiper-pagination" id="main-slider-pagination"></div>
         <div className="main-slider__nav">
           <div
-            className="swiper-button-prev"
+            className="swiper-button-next"
             id="main-slider__swiper-button-next"
           >
-            <i className="icon-right-arrow icon-left-arrow"></i>
+            <i className="icon-right-arrow"></i>
           </div>
           <div
-            className="swiper-button-next"
+            className="swiper-button-prev"
             id="main-slider__swiper-button-prev"
           >
             <i className="icon-right-arrow"></i>

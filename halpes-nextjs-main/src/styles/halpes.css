@@ -1759,7 +1759,7 @@ h6 {
   margin-bottom: 10px;
 }
 
-.main-slider__nav .swiper-button-prev .icon-left-arrow {
+.main-slider__nav .swiper-button-prev .icon-right-arrow {
   position: relative;
   transform: rotate(180deg);
 }

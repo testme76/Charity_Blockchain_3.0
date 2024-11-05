@@ -1,7 +1,7 @@
 import { useRootContext } from "@/context/context";
 import navItems, { social } from "@/data/NavItems";
 import useScroll from "@/hooks/useScroll";
-import logo from "@/images/resources/logo-1.png";
+import logo from "@/images/ResDB_logo.png";
 import Link from "next/link";
 import React from "react";
 import { Image } from "react-bootstrap";
@@ -14,9 +14,15 @@ const HeaderOne = () => {
   return (
     <header className="main-header clearfix">
       <div className="main-header__logo">
-        <Link href="/">
+        <Link href="/" legacyBehavior>
           <a>
-            <Image src={logo.src} alt="" />
+            <Image
+              src={logo.src}
+              alt="Logo"
+              width={90} // Set specific width
+              height={55} // Set specific height
+              objectFit="contain" // This ensures the image maintains its aspect ratio
+            />
           </a>
         </Link>
       </div>
@@ -26,7 +32,7 @@ const HeaderOne = () => {
             <div className="main-menu-wrapper__left">
               <div className="main-menu-wrapper__left-content">
                 <div className="main-menu-wrapper__left-text">
-                  <p>Welcome to the Charity & Donation Theme</p>
+                  <p>Welcome to the ResCharity</p>
                 </div>
                 <div className="main-menu-wrapper__left-email-box">
                   <div className="icon">

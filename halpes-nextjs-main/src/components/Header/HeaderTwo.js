@@ -17,7 +17,7 @@ const HeaderTwo = () => {
         <Container>
           <div className="main-header-two__top clearfix">
             <div className="main-header-two__logo">
-              <Link href="/">
+              <Link href="/" legacyBehavior>
                 <a>
                   <Image src={logo.src} alt="" />
                 </a>
@@ -56,7 +56,7 @@ const HeaderTwo = () => {
                 </li>
               </ul>
               <div className="main-header-two__btn">
-                <Link href="/causes-details">
+                <Link href="/causes-details" legacyBehavior>
                   <a className="main-header-two__donate-btn">
                     <i className="fa fa-heart"></i>Donate{" "}
                   </a>

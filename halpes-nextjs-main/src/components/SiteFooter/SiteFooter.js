@@ -108,10 +108,10 @@ const SiteFooter = () => {
               data-wow-delay="400ms"
             >
               <div className="footer-widget__column footer-widget__newsletter">
-                <h3 className="footer-widget__title">Newsletter</h3>
+                {/* <h3 className="footer-widget__title">Newsletter</h3>
                 <p className="footer-widget__newsletter-text">
                   Lorem ipsum dolor sit ame consect etur pisicing elit sed do.
-                </p>
+                </p> */}
                 <form className="footer-widget__newsletter-form">
                   <input
                     type="email"

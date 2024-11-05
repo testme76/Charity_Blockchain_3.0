@@ -1,5 +1,5 @@
 import bg from "@/images/backgrounds/footer-bg.jpg";
-import footerImage from "@/images/resources/footer-logo.jpg";
+import footerImage from "@/images/ResDB_logo.png";
 import { contact } from "./contactData";
 
 const footerData = {
@@ -7,9 +7,9 @@ const footerData = {
   link: "Halpes",
   copyrightYear: new Date().getFullYear(),
   about:
-    "Lorem ipsum dolor sit ame consect etur pisicing elit sed do eiusmod tempor incididunt ut labore.",
-  bottomLogo: footerImage.src,
-  footerBg: bg.src,
+    "ResCharity is a secure, blockchain-based platform for transparent charity donations, powered by ResVault from ResilientDB. ",
+  // bottomLogo: footerImage.src,
+  // footerBg: bg.src,
   social: [
     {
       id: 1,
