@@ -24,9 +24,9 @@ const SingleSlide = ({ slide = {} }) => {
               <a href={href} className="thm-btn">
                 <i className="fas fa-arrow-circle-right"></i>Learn More
               </a>
-              <div className="main-slider__shape-1 zoom-fade">
+              {/* <div className="main-slider__shape-1 zoom-fade">
                 <Image src={image.src} alt="" />
-              </div>
+              </div> */}
             </div>
           </Col>
         </Row>

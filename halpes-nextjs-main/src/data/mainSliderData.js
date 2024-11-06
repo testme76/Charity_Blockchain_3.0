@@ -9,7 +9,7 @@ const mainSliderData = [
     image,
     bg: bg1,
     subTitle: "Helping Them Today",
-    title: "Help the Poor",
+    title: "Help Those in Need",
     href: "#",
   },
   {
@@ -17,7 +17,7 @@ const mainSliderData = [
     image,
     bg: bg2,
     subTitle: "Helping Them Today",
-    title: "Help the Poor",
+    title: "Help Those in Need",
     href: "#",
   },
   {
@@ -25,7 +25,7 @@ const mainSliderData = [
     image,
     bg: bg3,
     subTitle: "Helping Them Today",
-    title: "Help the Poor",
+    title: "Help Those in Need",
     href: "#",
   },
 ];

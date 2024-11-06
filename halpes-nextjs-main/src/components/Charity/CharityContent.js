@@ -30,7 +30,7 @@ const CharityContent = () => {
         <div className="section-title text-left">
           <span className="section-title__tagline">Welcome to ResCharity</span>
           <h2 className="section-title__title">
-            Community Cat Kindness Fund</h2>
+            Yolo County SPCA Community Cat Kindness Fund</h2>
         </div>
         <p className="welcome-one__right-text">
           The Community Cat Kindness Fund has been set up by the Yolo County

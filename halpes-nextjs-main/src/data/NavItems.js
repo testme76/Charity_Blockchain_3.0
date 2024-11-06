@@ -52,7 +52,7 @@ const navItems = [
     href: "/causes",
     subNavItems: [
       { id: 1, name: "Causes", href: "/causes" },
-      //{ id: 2, name: "Causes Details", href: "/causes-details" },
+      { id: 2, name: "Causes Details", href: "/causes-details" },
     ],
   },
   // {

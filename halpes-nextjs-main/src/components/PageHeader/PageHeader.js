@@ -1,4 +1,4 @@
-import bg from "@/images/backgrounds/page-header-bg-1-1.jpg";
+import bg from "@/images/backgrounds/page_header_bg_1.jpg";
 import Link from "next/link";
 import React from "react";
 
@@ -9,6 +9,7 @@ const PageHeader = ({ pageTitle = "" }) => {
         className="page-header__bg"
         style={{ backgroundImage: `url(${bg.src})` }}
       ></div>
+      <div className="page-header__overlay"></div>
       <div className="container">
         <h2>{pageTitle}</h2>
         <ul className="thm-breadcrumb list-unstyled">
