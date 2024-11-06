@@ -3,8 +3,17 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["localhost"],
-    unoptimized: true,
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      issuer: /\.[jt]sx?$/,
+      use: ['@svgr/webpack']
+    });
+    return config;
   },
 };
 

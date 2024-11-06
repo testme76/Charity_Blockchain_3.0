@@ -7227,3 +7227,153 @@ h6 {
   position: relative;
   margin-top: 10px;
 }
+
+/*--------------------------------------------------------------
+# Donate Page
+--------------------------------------------------------------*/
+.donate-page {
+  position: relative;
+  display: block;
+  padding: 100px 0 100px;
+  background-image: url('../assets/images/bg.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.donate-page .form-container {
+  background-color: rgba(26, 26, 46, 0.9);
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #4e4e68;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+
+.donate-page .heading {
+  color: #f8f9fa;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.donate-page .form-control {
+  background-color: #1a1a2e;
+  color: #ffffff;
+  border-color: #4e4e68;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+.donate-page .form-control::placeholder {
+  color: #b0b0b0;
+}
+
+.donate-page .oauth-button {
+  background-color: #4e4e68;
+  color: #ffffff;
+  border: 1px solid #4e4e68;
+  border-radius: 4px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.donate-page .oauth-button:hover {
+  background-color: #5e5e7f;
+}
+
+.donate-page .signin-label {
+  color: #f8f9fa;
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: block;
+  text-align: center;
+}
+
+.donate-page .logoBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.donate-page .logoBox svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor; /* This will make the SVG inherit the text color */
+}
+
+.donate-page .oauth-text {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.donate-page .logout-button {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.donate-page .logout-button:hover {
+  background-color: #c82333;
+}
+
+.donate-page .loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
+
+.donate-page .animation-container {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+/* Modal Styles */
+.custom-modal .modal-content {
+  background-color: rgba(26, 26, 46, 0.95);
+  color: #f8f9fa;
+  border: 1px solid #4e4e68;
+}
+
+.custom-modal-header {
+  border-bottom: 1px solid #4e4e68;
+}
+
+.custom-modal-footer {
+  border-top: 1px solid #4e4e68;
+}
+
+.custom-modal-body p {
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+
+.custom-modal .modal-dialog {
+  max-width: 600px;
+}

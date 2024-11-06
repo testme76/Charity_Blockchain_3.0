@@ -1,11 +1,11 @@
 import causesDetails from "@/data/causesDetails";
 import { social } from "@/data/NavItems";
 import download from "@/images/resources/causes-details-download-icon.png";
-import React from "react";
+import React, { useState } from "react";
 import { Col, Image, Row } from "react-bootstrap";
 import CommentForm from "../CommentForm/CommentForm";
 import SingleComment from "./SingleComment";
-
+import Link from 'next/link';
 const {
   comments,
   summaryList,
@@ -22,6 +22,16 @@ const CausesDetailsLeft = () => {
   const raisedNumber = +raised.split(",").join("");
   const goalNumber = +goal.split(",").join("");
   const percent = Math.round((raisedNumber / goalNumber) * 100) + "%";
+  const [showDonationModal, setShowDonationModal] = useState(false);
+
+  const handleDonateClick = (e) => {
+    e.preventDefault();
+    setShowDonationModal(true);
+  };
+  const cause = {
+    id: "cause-1",
+    name: title, // Using the existing title from causesDetails data
+  };
 
   return (
     <div className="causes-details__left-bar">
@@ -94,16 +104,11 @@ const CausesDetailsLeft = () => {
       </div>
       <div className="causes-details__share">
         <div className="causes-details__share-btn-box">
-          <a href="#" className="causes-details__share-btn thm-btn">
-            <i className="fas fa-arrow-circle-right"></i>Donate Us Now
-          </a>
-        </div>
-        <div className="causes-details__share-social">
-          {social.map(({ icon, link }, index) => (
-            <a href={link} key={index}>
-              <i className={`fab ${icon}`}></i>
+          <Link href="/donate">
+            <a className="causes-details__share-btn thm-btn">
+              <i className="fas fa-arrow-circle-right"></i>Donate Us Now
             </a>
-          ))}
+          </Link>
         </div>
       </div>
       <div className="causes-details__download">

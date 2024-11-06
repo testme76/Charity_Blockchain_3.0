@@ -21,7 +21,7 @@ const HeaderOne = () => {
               alt="Logo"
               width={90} // Set specific width
               height={55} // Set specific height
-              objectFit="contain" // This ensures the image maintains its aspect ratio
+              objectFit="cover" // This ensures the image maintains its aspect ratio
             />
           </a>
         </Link>
