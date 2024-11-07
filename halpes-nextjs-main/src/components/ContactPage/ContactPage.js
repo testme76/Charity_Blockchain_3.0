@@ -15,46 +15,7 @@ const ContactPage = () => {
             We love to hear from our <br /> happy customers
           </h2>
         </div>
-        <Row>
-          <Col xl={6} lg={6}>
-            <div className="contact-page__left">
-              <div className="contact-page__img">
-                <Image src={image.src} alt="" />
-              </div>
-              <p className="contact-page__text">{description}</p>
-              <div className="contact-page__contact-info">
-                <ul className="contact-page__contact-list list-unstyled">
-                  <li>
-                    <div className="icon">
-                      <span className="icon-chat"></span>
-                    </div>
-                    <div className="text">
-                      <p>Call Anytime</p>
-                      <a href={`tel:${tel}`}>{tel}</a>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="icon">
-                      <span className="icon-message"></span>
-                    </div>
-                    <div className="text">
-                      <p>Send Email</p>
-                      <a href={`mailto:${email}`}>{email}</a>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="icon">
-                      <span className="icon-address"></span>
-                    </div>
-                    <div className="text">
-                      <p>Visit Office</p>
-                      <h5>{officeAddress}</h5>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </Col>
+        <Row className="justify-content-center">
           <Col xl={6} lg={6}>
             <ContactForm />
           </Col>

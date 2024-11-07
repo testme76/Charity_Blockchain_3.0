@@ -25,7 +25,8 @@ const HeaderTwo = () => {
             </div>
             <div className="main-header-two__contact-info">
               <ul className="main-header-two__contact-list list-unstyled">
-                <li>
+                {/* 删除或修改这三个 li 元素 */}
+                {/* <li>
                   <div className="main-header-two__contact-icon">
                     <span className="icon-chat"></span>
                   </div>
@@ -40,9 +41,7 @@ const HeaderTwo = () => {
                   </div>
                   <div className="main-header-two__contact-text">
                     <p>Send Email</p>
-                    <a href="mailto:needhelp@company.com">
-                      needhelp@company.com
-                    </a>
+                    <a href="mailto:needhelp@company.com">needhelp@company.com</a>
                   </div>
                 </li>
                 <li>
@@ -53,7 +52,7 @@ const HeaderTwo = () => {
                     <p>Visit Office</p>
                     <h5>80 broklyn golden street</h5>
                   </div>
-                </li>
+                </li> */}
               </ul>
               <div className="main-header-two__btn">
                 <Link href="/causes-details" legacyBehavior>
