@@ -35,19 +35,19 @@ const ContactForm = () => {
           </Col>
           <Col xl={6}>
             <div className="contact-page__input-box">
-              <input type="text" placeholder="Subject" name="subject" />
+              <input type="text" placeholder="Phone Number" name="phone" />
             </div>
           </Col>
         </Row>
         <Row>
           <Col xl={12}>
             <div className="contact-page__input-box">
-              <input type="text" placeholder="Phone Number" name="phone" />
+              <input type="text" placeholder="Charity Name" name="subject" />
             </div>
           </Col>
           <Col xl={12}>
             <div className="contact-page__input-box">
-              <textarea name="message" placeholder="Write message"></textarea>
+              <textarea name="message" placeholder="Write description"></textarea>
             </div>
             <button type="submit" className="thm-btn contact-page__btn">
               <i className="fas fa-arrow-circle-right"></i>Send a Message
