@@ -1,14 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
-import ResVaultSDK from 'resvault-sdk';
-import NotificationModal from './NotificationModal';
+import React, { useState, useEffect, useRef } from "react";
+import ResVaultSDK from "resvault-sdk";
+import NotificationModal from "./NotificationModal";
 
 const TransactionForm = ({ onLogout, token }) => {
-  const [amount, setAmount] = useState('');
-  const [data, setData] = useState('');
-  const [recipient, setRecipient] = useState('');
+  const [amount, setAmount] = useState("");
+  const [recipient, setRecipient] = useState("");
   const [showModal, setShowModal] = useState(false);
-  const [modalTitle, setModalTitle] = useState('');
-  const [modalMessage, setModalMessage] = useState('');
+  const [modalTitle, setModalTitle] = useState("");
+  const [modalMessage, setModalMessage] = useState("");
 
   const sdkRef = useRef(null);
 
@@ -25,17 +24,20 @@ const TransactionForm = ({ onLogout, token }) => {
 
       if (
         message &&
-        message.type === 'FROM_CONTENT_SCRIPT' &&
+        message.type === "FROM_CONTENT_SCRIPT" &&
         message.data &&
         message.data.success !== undefined
       ) {
         if (message.data.success) {
-          setModalTitle('Success');
-          setModalMessage('Transaction successful! ID: ' + message.data.data.postTransaction.id);
-        } else {
-          setModalTitle('Transaction Failed');
+          setModalTitle("Success");
           setModalMessage(
-            'Transaction failed: ' +
+            "Transaction successful! ID: " +
+              message.data.data.postTransaction.id
+          );
+        } else {
+          setModalTitle("Transaction Failed");
+          setModalMessage(
+            "Transaction failed: " +
               (message.data.error || JSON.stringify(message.data.errors))
           );
         }
@@ -54,37 +56,23 @@ const TransactionForm = ({ onLogout, token }) => {
     e.preventDefault();
 
     if (!recipient) {
-      setModalTitle('Validation Error');
-      setModalMessage('Please enter a recipient address.');
+      setModalTitle("Validation Error");
+      setModalMessage("Please enter a recipient address.");
       setShowModal(true);
       return;
     }
 
-    let parsedData = {};
-    if (data.trim() !== '') {
-      try {
-        parsedData = JSON.parse(data);
-      } catch (error) {
-        setModalTitle('Validation Error');
-        setModalMessage(
-          'Invalid JSON format in the data field. Please check and try again.'
-        );
-        setShowModal(true);
-        return;
-      }
-    }
-
     if (sdkRef.current) {
       sdkRef.current.sendMessage({
-        type: 'commit',
-        direction: 'commit',
+        type: "commit",
+        direction: "commit",
         amount: amount,
-        data: parsedData,
+        data: {},
         recipient: recipient,
       });
     } else {
-      setModalTitle('Error');
-      setModalMessage('SDK is not initialized.');
+      setModalTitle("Error");
+      setModalMessage("SDK is not initialized.");
       setShowModal(true);
     }
   };
@@ -118,16 +106,6 @@ const TransactionForm = ({ onLogout, token }) => {
                 placeholder="Enter your amount here"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
-              />
-            </div>
-
-            <div className="form-group mb-3">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Enter your data here (JSON)"
-                value={data}
-                onChange={(e) => setData(e.target.value)}
               />
             </div>
 
