@@ -72,7 +72,7 @@ const CausesDetailsLeft = () => {
           </p>
         ))}
       </div>
-      <div className="causes-details__images-box">
+      {/* <div className="causes-details__images-box">
         <Row>
           {images.slice(1).map((image, index) => (
             <Col xl={6} lg={6} key={index}>
@@ -82,8 +82,8 @@ const CausesDetailsLeft = () => {
             </Col>
           ))}
         </Row>
-      </div>
-      <div className="causes-details__summary">
+      </div> */}
+      {/* <div className="causes-details__summary">
         <div className="causes-details__summary-text">
           <p>{summaryText}</p>
         </div>
@@ -101,7 +101,7 @@ const CausesDetailsLeft = () => {
             ))}
           </ul>
         </div>
-      </div>
+      </div> */}
       <div className="causes-details__share">
         <div className="causes-details__share-btn-box">
           <Link href="/donate">
@@ -111,7 +111,7 @@ const CausesDetailsLeft = () => {
           </Link>
         </div>
       </div>
-      <div className="causes-details__download">
+      {/* <div className="causes-details__download">
         <div className="causes-details__left">
           <div className="icon">
             <Image src={download.src} alt="" />
@@ -125,7 +125,7 @@ const CausesDetailsLeft = () => {
             <i className="fas fa-arrow-circle-right"></i>Download Now
           </a>
         </div>
-      </div>
+      </div> */}
       <div className="comment-one">
         <h3 className="comment-one__title">Comments</h3>
         {comments.map((comment) => (

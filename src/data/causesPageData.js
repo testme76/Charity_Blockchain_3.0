@@ -5,7 +5,7 @@ const causesPageData = [
     category: "Animal Welfare",
     title: "Yolo County SPCA Community Cat Kindness Fund",
     description:
-      "There are not many of passages of lorem ipsum avail isn alteration donationa in form simply free.",
+      "The Community Cat Kindness Fund has been set up by the Yolo County SPCA to help provide care for community cats including veterinary care and humane euthanasia when needed for medical reasons. ",
     raised: "25,270",
     goal: "30,000",
   },
