@@ -24,3 +24,10 @@ yarn-
 
 # Next.js
 /.next/
+/out/
+/build/
+
+# Cache
+.cache
+*.cache
+.next/cache/
