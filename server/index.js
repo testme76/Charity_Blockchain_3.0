@@ -7,7 +7,6 @@ const path = require('path');
 
 const app = express();
 
-// 扩展 CORS 配置
 app.use(cors({
     origin: 'http://localhost:3000',
     methods: ['POST', 'GET', 'OPTIONS'],
@@ -17,27 +16,22 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// 确保上传目录存在
 const uploadDir = 'uploads';
 if (!fs.existsSync(uploadDir)){
     fs.mkdirSync(uploadDir);
 }
 
-// 配置文件存储
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, uploadDir);
     },
     filename: function (req, file, cb) {
-        // 保留原始文件名并添加时间戳
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
         cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
     }
 });
 
-// 文件过滤器
 const fileFilter = (req, file, cb) => {
-    // 扩展允许的文件类型
     const allowedTypes = [
         'image/jpeg',
         'image/png',
@@ -56,33 +50,31 @@ const fileFilter = (req, file, cb) => {
     }
 };
 
-// Multer 配置
 const upload = multer({
     storage: storage,
     fileFilter: fileFilter,
     limits: {
-        fileSize: 10 * 1024 * 1024, // 10MB
+        fileSize: 10 * 1024 * 1024,
         files: 10
     }
 }).array('files', 10);
 
-// 邮件发送路由
 app.post('/send-email', async (req, res) => {
-    console.log('Received request'); // 调试日志
+    console.log('Received request');
 
     upload(req, res, async function(err) {
-        console.log('Processing upload'); // 调试日志
+        console.log('Processing upload');
 
         if (err instanceof multer.MulterError) {
-            console.error('Multer error:', err); // 调试日志
+            console.error('Multer error:', err);
             return res.status(400).send(`Upload error: ${err.message}`);
         } else if (err) {
-            console.error('Unknown error:', err); // 调试日志
+            console.error('Unknown error:', err);
             return res.status(500).send(`Unknown error: ${err.message}`);
         }
 
-        console.log('Files:', req.files); // 调试日志
-        console.log('Body:', req.body); // 调试日志
+        console.log('Files:', req.files);
+        console.log('Body:', req.body);
 
         const { name, email, subject, phone, message } = req.body;
         const files = req.files;
@@ -95,7 +87,6 @@ app.post('/send-email', async (req, res) => {
             }
         });
 
-        // 构建 HTML 邮件内容
         const htmlContent = `
             <h2>New Charity Project Submission</h2>
             <p><strong>Full Name:</strong> ${name || 'Not provided'}</p>
@@ -112,7 +103,7 @@ app.post('/send-email', async (req, res) => {
             to: 'shhaogao@gmail.com',
             subject: `Charity Project: ${subject || 'New Contact'}`,
             html: htmlContent,
-            text: htmlContent.replace(/<[^>]*>/g, ''), // 纯文本版本
+            text: htmlContent.replace(/<[^>]*>/g, ''),
             attachments: files ? files.map(file => ({
                 filename: file.originalname,
                 path: file.path,
@@ -121,11 +112,10 @@ app.post('/send-email', async (req, res) => {
         };
 
         try {
-            console.log('Sending email...'); // 调试日志
+            console.log('Sending email...');
             await transporter.sendMail(mailOptions);
-            console.log('Email sent successfully'); // 调试日志
+            console.log('Email sent successfully');
 
-            // 清理上传的文件
             if (files && files.length > 0) {
                 files.forEach(file => {
                     if (fs.existsSync(file.path)) {
@@ -136,9 +126,8 @@ app.post('/send-email', async (req, res) => {
 
             res.status(200).send('Email sent successfully!');
         } catch (error) {
-            console.error('Email sending error:', error); // 调试日志
+            console.error('Email sending error:', error);
             
-            // 清理文件
             if (files && files.length > 0) {
                 files.forEach(file => {
                     if (fs.existsSync(file.path)) {
@@ -152,7 +141,6 @@ app.post('/send-email', async (req, res) => {
     });
 });
 
-// 健康检查路由
 app.get('/health', (req, res) => {
     res.status(200).send('Server is running');
 });
@@ -160,5 +148,5 @@ app.get('/health', (req, res) => {
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
-    console.log(`Upload directory: ${path.resolve(uploadDir)}`); // 显示上传目录的完整路径
+    console.log(`Upload directory: ${path.resolve(uploadDir)}`);
 });
