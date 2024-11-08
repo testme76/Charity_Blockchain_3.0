@@ -31,12 +31,10 @@ const ContactForm = () => {
     try {
       const formDataToSend = new FormData();
       
-      // 添加表单字段
       Object.keys(formData).forEach(key => {
         formDataToSend.append(key, formData[key]);
       });
       
-      // 添加文件
       files.forEach(file => {
         formDataToSend.append('files', file);
       });
@@ -50,7 +48,6 @@ const ContactForm = () => {
       console.log('Response:', response);
       alert('Message sent successfully!');
       
-      // 重置表单
       setFormData({
         name: '',
         email: '',
@@ -59,7 +56,7 @@ const ContactForm = () => {
         message: ''
       });
       setFiles([]);
-      e.target.reset(); // 重置文件输入
+      e.target.reset();
       
     } catch (error) {
       console.error('Error:', error);
