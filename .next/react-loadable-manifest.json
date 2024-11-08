@@ -1,0 +1,122 @@
+{
+  "../components/BrandOne/BrandOne.js -> tiny-slider-react": {
+    "id": 72790,
+    "files": [
+      "static/chunks/790.349fa74b4b7f286a.js"
+    ]
+  },
+  "../components/CausesDetails/Login.js -> lottie-web": {
+    "id": 11248,
+    "files": [
+      "static/chunks/ea88be26.43b75960b55a0567.js"
+    ]
+  },
+  "../components/CausesOne/CausesOne.js -> tiny-slider-react": {
+    "id": 72790,
+    "files": [
+      "static/chunks/790.349fa74b4b7f286a.js"
+    ]
+  },
+  "../components/CausesThree/CausesThree.js -> tiny-slider-react": {
+    "id": 72790,
+    "files": [
+      "static/chunks/790.349fa74b4b7f286a.js"
+    ]
+  },
+  "../components/CausesTwo/CausesTwo.js -> tiny-slider-react": {
+    "id": 72790,
+    "files": [
+      "static/chunks/790.349fa74b4b7f286a.js"
+    ]
+  },
+  "../components/CountersTwo/CountersTwo.js -> ../Jarallax/Jarallax": {
+    "id": 60397,
+    "files": [
+      "static/chunks/572.929ee40047f49fa9.js",
+      "static/css/f5205a938dd2ce26.css",
+      "static/chunks/110.f56f5b1986c8de6c.js"
+    ]
+  },
+  "../components/EventsOne/EventsOne.js -> tiny-slider-react": {
+    "id": 72790,
+    "files": [
+      "static/chunks/790.349fa74b4b7f286a.js"
+    ]
+  },
+  "../components/GalleryOne/GalleryOne.js -> tiny-slider-react": {
+    "id": 72790,
+    "files": [
+      "static/chunks/790.349fa74b4b7f286a.js"
+    ]
+  },
+  "../components/Header/Header.js -> ./HeaderOne": {
+    "id": 72418,
+    "files": [
+      "static/chunks/418.41e94c395fe53d6a.js"
+    ]
+  },
+  "../components/Header/Header.js -> ./HeaderThree": {
+    "id": 21714,
+    "files": [
+      "static/chunks/714.6c9a6ca4e66b7a39.js"
+    ]
+  },
+  "../components/Header/Header.js -> ./HeaderTwo": {
+    "id": 17642,
+    "files": [
+      "static/chunks/642.bc09c1422b38187c.js"
+    ]
+  },
+  "../components/HelpThem/HelpThem.js -> ../Jarallax/Jarallax": {
+    "id": 60397,
+    "files": [
+      "static/chunks/572.929ee40047f49fa9.js",
+      "static/css/f5205a938dd2ce26.css",
+      "static/chunks/110.f56f5b1986c8de6c.js"
+    ]
+  },
+  "../components/JoinOne/JoinOne.js -> ../Jarallax/Jarallax": {
+    "id": 60397,
+    "files": [
+      "static/chunks/572.929ee40047f49fa9.js",
+      "static/css/f5205a938dd2ce26.css",
+      "static/chunks/110.f56f5b1986c8de6c.js"
+    ]
+  },
+  "../components/NewsTwo/NewsTwo.js -> ../Jarallax/Jarallax": {
+    "id": 60397,
+    "files": [
+      "static/chunks/572.929ee40047f49fa9.js",
+      "static/css/f5205a938dd2ce26.css",
+      "static/chunks/110.f56f5b1986c8de6c.js"
+    ]
+  },
+  "../components/TestimonialOne/TestimonialOne.js -> tiny-slider-react": {
+    "id": 72790,
+    "files": [
+      "static/chunks/790.349fa74b4b7f286a.js"
+    ]
+  },
+  "donate.js -> ../components/CausesDetails/Loader": {
+    "id": 60625,
+    "files": [
+      "static/chunks/625.afb69627761940a5.js"
+    ]
+  },
+  "donate.js -> ../components/CausesDetails/Login": {
+    "id": 36138,
+    "files": [
+      "static/chunks/783-d7e8496b857cba23.js",
+      "static/chunks/956.bf52b29573e3471c.js",
+      "static/chunks/138.83bddd6934c9e68e.js"
+    ]
+  },
+  "donate.js -> ../components/CausesDetails/TransactionForm": {
+    "id": 86794,
+    "files": [
+      "static/chunks/783-d7e8496b857cba23.js",
+      "static/chunks/956.bf52b29573e3471c.js",
+      "static/chunks/794.2d18a2cb8e7a61a2.js"
+    ]
+  }
+}
