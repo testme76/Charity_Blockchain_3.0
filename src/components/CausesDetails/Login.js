@@ -1,16 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react';
-import ResVaultSDK from 'resvault-sdk';
-import NotificationModal from './NotificationModal';
-import { v4 as uuidv4 } from 'uuid';
-import dynamic from 'next/dynamic';
+import React, { useEffect, useRef, useState } from "react";
+import ResVaultSDK from "resvault-sdk";
+import NotificationModal from "./NotificationModal";
+import { v4 as uuidv4 } from "uuid";
+import dynamic from "next/dynamic";
 // Import SVG as a component
-import ResVaultLogo from '@/images/resilientdb.svg';
+import ResVaultLogo from "@/images/resilientdb.svg";
 
 const Login = ({ onLogin }) => {
   const sdkRef = useRef(null);
   const [showModal, setShowModal] = useState(false);
-  const [modalTitle, setModalTitle] = useState('');
-  const [modalMessage, setModalMessage] = useState('');
+  const [modalTitle, setModalTitle] = useState("");
+  const [modalMessage, setModalMessage] = useState("");
   const animationContainer = useRef(null);
 
   if (!sdkRef.current) {
@@ -18,14 +18,14 @@ const Login = ({ onLogin }) => {
   }
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && animationContainer.current) {
-      import('lottie-web').then((lottie) => {
+    if (typeof window !== "undefined" && animationContainer.current) {
+      import("lottie-web").then((lottie) => {
         const instance = lottie.default.loadAnimation({
           container: animationContainer.current,
-          renderer: 'svg',
+          renderer: "svg",
           loop: true,
           autoplay: true,
-          animationData: require('@/images/animation.json'),
+          animationData: require("@/images/animation.json"),
         });
 
         const observer = new IntersectionObserver((entries) => {
@@ -38,11 +38,15 @@ const Login = ({ onLogin }) => {
           });
         });
 
-        observer.observe(animationContainer.current);
+        if (animationContainer.current) {
+          observer.observe(animationContainer.current);
+        }
 
         return () => {
           instance.destroy();
-          observer.disconnect();
+          if (animationContainer.current) {
+            observer.unobserve(animationContainer.current);
+          }
         };
       });
     }
@@ -57,24 +61,24 @@ const Login = ({ onLogin }) => {
 
       if (
         message &&
-        message.type === 'FROM_CONTENT_SCRIPT' &&
+        message.type === "FROM_CONTENT_SCRIPT" &&
         message.data &&
         message.data.success !== undefined
       ) {
         if (message.data.success) {
           const token = uuidv4();
-          sessionStorage.setItem('token', token);
+          sessionStorage.setItem("token", token);
           onLogin(token);
         }
       } else if (
         message &&
-        message.type === 'FROM_CONTENT_SCRIPT' &&
+        message.type === "FROM_CONTENT_SCRIPT" &&
         message.data &&
-        message.data === 'error'
+        message.data === "error"
       ) {
-        setModalTitle('Authentication Failed');
+        setModalTitle("Authentication Failed");
         setModalMessage(
-          'Please connect ResVault to this ResilientApp and try again.'
+          "Please connect ResVault to this ResilientApp and try again."
         );
         setShowModal(true);
       }
@@ -90,12 +94,12 @@ const Login = ({ onLogin }) => {
   const handleAuthentication = () => {
     if (sdkRef.current) {
       sdkRef.current.sendMessage({
-        type: 'login',
-        direction: 'login',
+        type: "login",
+        direction: "login",
       });
     } else {
-      setModalTitle('Error');
-      setModalMessage('SDK is not initialized.');
+      setModalTitle("Error");
+      setModalMessage("SDK is not initialized.");
       setShowModal(true);
     }
   };
@@ -137,5 +141,5 @@ const Login = ({ onLogin }) => {
 };
 
 export default dynamic(() => Promise.resolve(Login), {
-  ssr: false
+  ssr: false,
 });
